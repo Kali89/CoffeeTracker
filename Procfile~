@@ -1,1 +1,1 @@
-web: gunicorn coffeewebsite.wsgi
+web: python coffeewebsite/manage.py collectstatic --noinput; gunicorn coffeewebsite.wsgi
