@@ -8,7 +8,10 @@ urlpatterns = patterns('',
     url(r'^table/', include('table.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
-if not settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    )
+##if not settings.DEBUG:
+##    urlpatterns += patterns('',
+##        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+##    )
+
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns()
