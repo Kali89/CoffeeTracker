@@ -3,9 +3,7 @@ from django.http import HttpResponse
 from table.models import Scores
 
 def index(request):
-    latest_scores = Scores.objects.all()
-    output = ', '.join([p.buyer for p in latest_scores])
-    return HttpResponse(output)
+    return HttpResponse("This be the homepage.")
 
 
 def table(request):
